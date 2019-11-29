@@ -1126,6 +1126,15 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
+"@react-native-community/art@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@react-native-community/art/-/art-1.0.3.tgz#13c68d86e75d2f7cb199f58cce7a4e5ff395223a"
+  integrity sha512-gCgCBDVkpmcCzI+j6+Jv4fNvxNjAWZ7s8dDZEn52K2f5lmtdD/DV/64dZ1AyHHgA9BuDLOtRKm8QJE0DY88rgA==
+  dependencies:
+    art "^0.10.3"
+    invariant "^2.2.4"
+    prop-types "^15.7.2"
+
 "@react-native-community/cli@^1.2.1":
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli/-/cli-1.12.0.tgz#f4cbc2204af63a87d5736d2fa6a018c1fd5efd44"
@@ -1433,7 +1442,7 @@ array-unique@^0.3.2:
   resolved "https://registry.yarnpkg.com/array-unique/-/array-unique-0.3.2.tgz#a894b75d4bc4f6cd679ef3244a9fd8f46ae2d428"
   integrity sha1-qJS3XUvE9s1nnvMkSp/Y9Gri1Cg=
 
-art@^0.10.0:
+art@^0.10.0, art@^0.10.3:
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/art/-/art-0.10.3.tgz#b01d84a968ccce6208df55a733838c96caeeaea2"
   integrity sha512-HXwbdofRTiJT6qZX/FnchtldzJjS3vkLJxQilc3Xj+ma2MXjY4UAyQ0ls1XZYVnDvVIBiFZbC6QsvtW86TD6tQ==
@@ -4537,7 +4546,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -4673,6 +4682,14 @@ react-native-mime-types@^2.2.1:
   integrity sha512-2H0jjW5l2driXiiKx9PZsJDCFgS8LeMaVLVZPy3iRkBrNcstpQosEr6+YJfihLbW3WvFtmS2qcyFKB7mYw/iJg==
   dependencies:
     mime-db "~1.25.0"
+
+react-native-progress@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-progress/-/react-native-progress-4.0.2.tgz#4a19178b2b214c831a1375a60a54acae1fd2d843"
+  integrity sha512-oAnpF8zIMTPa9czQ5lYlSn/EO+mYkjf3LTMtCqt57yXkTrX1d89iUOTOSIEKLDtrH3e7iVdYR//2nizPPQejbQ==
+  dependencies:
+    "@react-native-community/art" "^1.0.3"
+    prop-types "^15.7.2"
 
 react-native-view-shot@2.6.0:
   version "2.6.0"
