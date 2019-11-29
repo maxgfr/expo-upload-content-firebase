@@ -41,7 +41,7 @@ export default function App() {
         />
       <Button
           color="#333"
-          title="Upload content from"
+          title="Upload content"
           onPress={this._onPress}
           style={styles.button}
         />
