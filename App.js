@@ -4,11 +4,19 @@ import {
   View,
   Button
 } from 'react-native';
+import Firebase from './lib/firebase';
 
 export default function App() {
 
   _onPress = () => {
-    alert('Simple Button pressed');
+    let firebase = Firebase.getInstance();
+    firebase.getMyNextFeedPost(parameter, nextToken)
+      .then((res) => {
+          console.log(res);
+      })
+      .catch((error) => {
+          console.log(error);
+      });
   }
 
   return (
