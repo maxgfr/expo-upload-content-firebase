@@ -4,19 +4,21 @@ import {
   View,
   Button,
   Linking,
-  Alert
+  Alert,
+  Text
 } from 'react-native';
-import Firebase from './lib/firebase';
+import { EventRegister } from 'react-native-event-listeners';
 import * as DocumentPicker from 'expo-document-picker';
 import * as mime from 'react-native-mime-types';
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
 import * as Progress from 'react-native-progress';
-import { EventRegister } from 'react-native-event-listeners';
+import Firebase from './lib/firebase';
 
 export default function App() {
 
     const [progress, setProgress] = useState(0);
+    const [url, setUrl] = useState("");
 
     useEffect(() => {
       this.listener = EventRegister.addEventListener('onProgress', (data) => {
@@ -29,8 +31,6 @@ export default function App() {
         EventRegister.removeEventListener(this.listener);
       }
     }, []);
-
-
 
   _onPressDocumentPicker = async () => {
     const result = await DocumentPicker.getDocumentAsync({});
@@ -67,6 +67,7 @@ export default function App() {
   }
 
   addToFirebase = (uri, name) => {
+    setUrl('');
     var extension = uri.split('.').pop();
     var contentType = mime.lookup(extension);
     let firebase = Firebase.getInstance();
@@ -74,6 +75,7 @@ export default function App() {
     firebase.saveStorage('new/', uri, name, contentType, extension)
       .then((res) => {
           console.log(res);
+          setUrl(res.url);
       })
       .catch((error) => {
           console.log(error);
@@ -145,6 +147,11 @@ export default function App() {
           <Progress.Circle progress={progress} size={75} showsText={true} />
           : null
         }
+        {
+          url != '' ?
+          <Text style={styles.text}>File URL: {url}</Text>
+          : null
+        }
     </View>
   );
 }
@@ -158,6 +165,12 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 10,
-    color: '#fff'
+    color: '#fff',
+    marginBottom: 20
+  },
+  text: {
+    marginTop: 20,
+    textAlign: 'center',
+    marginHorizontal: 10
   }
 });
