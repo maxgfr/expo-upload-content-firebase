@@ -40,14 +40,6 @@ export default function App() {
     }
   }
 
-  _onPressCamera = async () => {
-    const result = await DocumentPicker.getDocumentAsync({});
-    console.log('Result:', result);
-    if (result.type != "cancel" && !result.cancelled) {
-      this.addToFirebase(result.uri, result.name);
-    }
-  }
-
   _onPressLibrary = async () => {
     await this.pickContent((result) => {
       console.log('Result:', result);
